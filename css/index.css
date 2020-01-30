@@ -1,0 +1,18 @@
+.tile {
+    position: absolute;
+    fill: #4d4d5f;
+    transition: 0.2s;
+}
+
+.tile:hover {
+    fill: #81819e;
+    cursor: grab;
+
+
+}
+
+#Grid {
+    white-space: nowrap;
+    
+}
+

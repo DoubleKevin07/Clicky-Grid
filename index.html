@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Kevin">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="Web">
+
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <title>Tile Fun</title>
+
+</head>
+
+<body id = "bodyg">
+
+    <div id="Grid">
+
+    </div>
+</body>
+
+<script>
+    function fill_grid() {
+        var box_size = 100;
+        var width = 5;
+
+
+        var Grid = document.getElementById("Grid");
+        /* What we're going to do here is, we're going to create a bunch of canvas elements, manually. During this, we will make sure we fill the entirety of the webpage. */
+
+        var num_rows = Math.ceil(window.innerHeight / box_size);
+        var num_cols = Math.ceil(window.innerWidth / box_size);
+
+        var curr_tile_id = 0;
+        for (var i = 0; i < num_rows; i++) {
+            for (var j = 0; j < num_cols; j++) {
+
+                // Add canvas element
+                Grid.innerHTML = Grid.innerHTML + `
+                <svg width = "${box_size + width}" height = "${box_size + width}">
+                    <rect width="${box_size}" height="${box_size}" class = "tile" id = "tile${curr_tile_id.toString()}"/>
+                </svg>`;
+
+
+                /*
+                    // Add canvas element
+                    Grid.innerHTML = Grid.innerHTML + `<canvas class = "tile" id = "tile${curr_tile_id.toString()}"></canvas>`;
+
+                    // Get the tile.
+                    var tile = document.getElementById("tile" + curr_tile_id.toString());
+                    // console.log(to_string
+                    // Get its internal context.
+                    var context = tile.getContext("2d");
+
+                    context.fillRect(15, 15, 200, 200);
+                */
+                curr_tile_id++;
+            }
+            Grid.innerHTML = Grid.innerHTML + `<br>`;
+
+        }
+
+
+
+    }
+    fill_grid()
+</script>
+<script src="script.js"></script>
+<html>
