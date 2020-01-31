@@ -7,12 +7,11 @@
 .tile:hover {
     fill: #81819e;
     cursor: grab;
-
-
 }
 
 #Grid {
     white-space: nowrap;
-    
+    zoom: 1.1;
+    margin-left: -10%;
+    margin-top: -10%;
 }
-
